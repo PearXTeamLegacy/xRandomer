@@ -11,7 +11,7 @@ namespace xRandomer
 
         private void btnOK_Click(object sender, System.EventArgs e)
         {
-            Program.ins.AddPattern(new xRandomerPattern(boxName.Text, boxTemplate.Text));
+            PatternUtils.AddPattern(new xRandomerPattern(boxName.Text, boxTemplate.Text), ref Program.ins);
             Close();
         }
     }

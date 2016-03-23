@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using PearXLib.Engine.Flat;
+using xRandomer.Properties;
 
 namespace xRandomer
 {
@@ -9,6 +10,7 @@ namespace xRandomer
         {
             Font = new Font("Yanone Kaffeesatz", 20.25F);
             MaximizeBox = false;
+            Icon = Resources.xricon;
         }
     }
 }

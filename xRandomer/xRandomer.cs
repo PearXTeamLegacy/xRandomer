@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace xRandomer
 {
-    public partial class Main : rForm
+    public partial class xRandomer : rForm
     {
         public enum Opened
         {
@@ -18,56 +18,11 @@ namespace xRandomer
             PATTERNS,
             AUTOGEN
         }
-        public void AddPattern(xRandomerPattern pattern)
-        {
-            if (patterns.Contains(pattern)) return;
-            patterns.Add(pattern);
-            listPatterns.Items.Add(pattern.Name);
-            SavePatterns();
-        }
-        public void RemovePattern(xRandomerPattern pattern)
-        {
-            patterns.Remove(pattern);
-            listPatterns.Items.Remove(pattern.Name);
-            SavePatterns();
-        }
-        public void SavePatterns()
-        {
-            List<string> l = new List<string>();
-            foreach (xRandomerPattern pat in patterns)
-            {
-                l.Add(pat.Name + ":xRandomerSeparator:" + pat.Template);
-            }
-            File.WriteAllLines(Program.Path + "patterns.xrandomer", l.ToArray());
-        }
-
-        public void RestorePatterns()
-        {
-            foreach (xRandomerPattern pat in patterns)
-            {
-                RemovePattern(pat);
-            }
-            AddPattern(new xRandomerPattern("Password", "%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%"));
-            AddPattern(new xRandomerPattern("Password (hard)", "%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%%randws%"));
-            AddPattern(new xRandomerPattern("Pin-Code", "%num%%num%%num%%num%"));
-            AddPattern(new xRandomerPattern("Digital Key", "%RANDWS%%RANDWS%%RANDWS%%RANDWS%-%RANDWS%%RANDWS%%RANDWS%%RANDWS%-%RANDWS%%RANDWS%%RANDWS%%RANDWS%-%RANDWS%%RANDWS%%RANDWS%%RANDWS%"));
-        }
-
-        public void LoadPatterns()
-        {
-            string[] l = File.ReadAllLines(Program.Path + "patterns.xrandomer");
-            foreach (string s in l)
-            {
-                string[] a = s.Split(new string[] { ":xRandomerSeparator:" }, StringSplitOptions.None);
-                AddPattern(new xRandomerPattern(a[0], a[1]));
-            }
-        }
-
-        public List<xRandomerPattern> patterns = new List<xRandomerPattern>();
+        public List<xRandomerPattern> Patterns = new List<xRandomerPattern>();
         public Opened opened = Opened.NONE;
         public XRUtils utils = new XRUtils();
 
-        public Main()
+        public xRandomer()
         {
             InitializeComponent();
             UpdateGUI(Opened.NONE);
@@ -96,12 +51,12 @@ namespace xRandomer
 
         public void UpdateGUI(Opened o)
         {
-            Size = new Size(862, 184);
+            Size = new Size(771, 231);
             opened = o;
             switch (o)
             {
                 case Opened.NONE:
-                    Size = new Size(573, 184);
+                    Size = new Size(491, 231);
                     lblHelp.Visible = false;
                     panelPatterns.Visible = false;
                     panelAutogen.Visible = false;
@@ -127,22 +82,22 @@ namespace xRandomer
         {
             if (!File.Exists(Program.Path + "patterns.xrandomer"))
             {
-                RestorePatterns();
+                PatternUtils.RestorePatterns(ref Program.ins);
             }
             else
-                LoadPatterns();
+                PatternUtils.LoadPatterns(ref Program.ins);
         }
 
         private void listPatterns_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listPatterns.SelectedItem == null) return;
 
-            boxTemplate.Text = patterns[listPatterns.SelectedIndex].Template;
+            boxTemplate.Text = Patterns[listPatterns.SelectedIndex].Template;
         }
 
         private void btnDelPattern_Click(object sender, EventArgs e)
         {
-            RemovePattern(patterns[listPatterns.SelectedIndex]);
+            PatternUtils.RemovePattern(Patterns[listPatterns.SelectedIndex], ref Program.ins);
         }
 
         private void btnAddPattern_Click(object sender, EventArgs e)
@@ -174,8 +129,11 @@ namespace xRandomer
 
         private void bwAutogen_DoWork(object sender, DoWorkEventArgs e)
         {
-            Invoke(new MethodInvoker(() => lblWorking.Visible = true));
-            utils.Autogenerate(boxTemplate.Text, Convert.ToInt64(boxAutogenCount.Text));
+            if (!string.IsNullOrEmpty(boxAutogenCount.Text))
+            {
+                Invoke(new MethodInvoker(() => lblWorking.Visible = true));
+                utils.Autogenerate(boxTemplate.Text, Convert.ToInt64(boxAutogenCount.Text));
+            }
         }
 
         private void bwAutogen_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

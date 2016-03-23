@@ -8,7 +8,7 @@ namespace xRandomer
     static class Program
     {
         public static string Path = d.pxDir + "/xRandomer/";
-        public static Main ins;
+        public static xRandomer ins;
         public static Random rand = new Random();
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace xRandomer
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                ins = new Main();
+                ins = new xRandomer();
                 Application.Run(ins);
             }
         }
