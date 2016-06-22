@@ -34,14 +34,14 @@
             this.btnGenerate = new PearXLib.Engine.Flat.FlatButton();
             this.btnCopy = new PearXLib.Engine.Flat.FlatButton();
             this.btnHelp = new PearXLib.Engine.Flat.FlatButton();
-            this.lblHelp = new System.Windows.Forms.Label();
+            this.lblHelp = new PearXLib.Engine.Flat.FlatLabel();
             this.btnTemplates = new PearXLib.Engine.Flat.FlatButton();
             this.listPatterns = new System.Windows.Forms.ListBox();
             this.btnDelPattern = new PearXLib.Engine.Flat.FlatButton();
             this.btnAddPattern = new PearXLib.Engine.Flat.FlatButton();
             this.panelPatterns = new System.Windows.Forms.Panel();
             this.panelAutogen = new System.Windows.Forms.Panel();
-            this.lblWorking = new System.Windows.Forms.Label();
+            this.lblWorking = new PearXLib.Engine.Flat.FlatLabel();
             this.btnStopAutogen = new PearXLib.Engine.Flat.FlatButton();
             this.btnStartAutogen = new PearXLib.Engine.Flat.FlatButton();
             this.boxAutogenCount = new System.Windows.Forms.TextBox();
@@ -304,7 +304,7 @@
         private PearXLib.Engine.Flat.FlatButton btnGenerate;
         private PearXLib.Engine.Flat.FlatButton btnCopy;
         private PearXLib.Engine.Flat.FlatButton btnHelp;
-        private System.Windows.Forms.Label lblHelp;
+        private PearXLib.Engine.Flat.FlatLabel lblHelp;
         private PearXLib.Engine.Flat.FlatButton btnTemplates;
         private PearXLib.Engine.Flat.FlatButton btnDelPattern;
         private PearXLib.Engine.Flat.FlatButton btnAddPattern;
@@ -315,7 +315,7 @@
         private PearXLib.Engine.Flat.FlatButton btnStartAutogen;
         private System.Windows.Forms.TextBox boxAutogenCount;
         private System.ComponentModel.BackgroundWorker bwAutogen;
-        private System.Windows.Forms.Label lblWorking;
+        private PearXLib.Engine.Flat.FlatLabel lblWorking;
         public System.Windows.Forms.ListBox listPatterns;
     }
 }

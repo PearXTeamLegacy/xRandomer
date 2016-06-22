@@ -143,7 +143,7 @@ namespace xRandomer
 
         private void boxAutogenCount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (PXL.isNumberKey(e))
+            if (PXL.IsNumberKey(e))
             {
                 e.Handled = true;
             }
