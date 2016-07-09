@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using PearXLib;
 using System.IO;
-using System.Linq;
 
 namespace xRandomer
 {
@@ -14,7 +13,6 @@ namespace xRandomer
         public enum Opened
         {
             NONE,
-            HELP,
             PATTERNS,
             AUTOGEN
         }
@@ -44,11 +42,6 @@ namespace xRandomer
                 Clipboard.SetText(boxGenerated.Text);
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            UpdateGUI(opened == Opened.NONE ? Opened.HELP : Opened.NONE);
-        }
-
         public void UpdateGUI(Opened o)
         {
             Size = new Size(771, 231);
@@ -57,12 +50,8 @@ namespace xRandomer
             {
                 case Opened.NONE:
                     Size = new Size(491, 231);
-                    lblHelp.Visible = false;
                     panelPatterns.Visible = false;
                     panelAutogen.Visible = false;
-                    break;
-                case Opened.HELP:
-                    lblHelp.Visible = true;
                     break;
                 case Opened.PATTERNS:
                     panelPatterns.Visible = true;

@@ -96,7 +96,6 @@
             this.Name = "AddPatternForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Pattern";
-            this.ToTrayBox = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 

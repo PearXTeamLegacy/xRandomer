@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xRandomer));
             this.boxGenerated = new System.Windows.Forms.TextBox();
             this.boxTemplate = new System.Windows.Forms.TextBox();
             this.btnGenerate = new PearXLib.Engine.Flat.FlatButton();
             this.btnCopy = new PearXLib.Engine.Flat.FlatButton();
-            this.btnHelp = new PearXLib.Engine.Flat.FlatButton();
-            this.lblHelp = new PearXLib.Engine.Flat.FlatLabel();
             this.btnTemplates = new PearXLib.Engine.Flat.FlatButton();
             this.listPatterns = new System.Windows.Forms.ListBox();
             this.btnDelPattern = new PearXLib.Engine.Flat.FlatButton();
@@ -70,72 +67,34 @@
             // btnGenerate
             // 
             this.btnGenerate.Border = 0;
-            this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerate.Font = new System.Drawing.Font("Yanone Kaffeesatz", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGenerate.ForeColor = System.Drawing.Color.White;
-            this.btnGenerate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerate.Location = new System.Drawing.Point(12, 125);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(470, 45);
             this.btnGenerate.TabIndex = 2;
             this.btnGenerate.Text = "Generate";
-            this.btnGenerate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnCopy
             // 
             this.btnCopy.Border = 0;
-            this.btnCopy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCopy.Font = new System.Drawing.Font("Yanone Kaffeesatz", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCopy.ForeColor = System.Drawing.Color.White;
-            this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopy.Location = new System.Drawing.Point(442, 43);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(39, 40);
             this.btnCopy.TabIndex = 3;
             this.btnCopy.Text = "Copy";
-            this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.Border = 0;
-            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHelp.ForeColor = System.Drawing.Color.White;
-            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHelp.Location = new System.Drawing.Point(327, 176);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(154, 43);
-            this.btnHelp.TabIndex = 4;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // lblHelp
-            // 
-            this.lblHelp.AutoSize = true;
-            this.lblHelp.Font = new System.Drawing.Font("Yanone Kaffeesatz", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblHelp.ForeColor = System.Drawing.Color.White;
-            this.lblHelp.Location = new System.Drawing.Point(492, 43);
-            this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(250, 114);
-            this.lblHelp.TabIndex = 5;
-            this.lblHelp.Text = resources.GetString("lblHelp.Text");
-            this.lblHelp.Visible = false;
             // 
             // btnTemplates
             // 
             this.btnTemplates.Border = 0;
-            this.btnTemplates.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTemplates.Font = new System.Drawing.Font("Yanone Kaffeesatz", 20.25F);
-            this.btnTemplates.ForeColor = System.Drawing.Color.White;
-            this.btnTemplates.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTemplates.Location = new System.Drawing.Point(169, 176);
+            this.btnTemplates.Location = new System.Drawing.Point(248, 176);
             this.btnTemplates.Name = "btnTemplates";
-            this.btnTemplates.Size = new System.Drawing.Size(154, 43);
+            this.btnTemplates.Size = new System.Drawing.Size(233, 43);
             this.btnTemplates.TabIndex = 6;
             this.btnTemplates.Text = "Patterns";
-            this.btnTemplates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnTemplates.Click += new System.EventHandler(this.btnTemplates_Click);
             // 
             // listPatterns
@@ -152,29 +111,21 @@
             // btnDelPattern
             // 
             this.btnDelPattern.Border = 0;
-            this.btnDelPattern.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelPattern.ForeColor = System.Drawing.Color.White;
-            this.btnDelPattern.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelPattern.Location = new System.Drawing.Point(249, 147);
             this.btnDelPattern.Name = "btnDelPattern";
             this.btnDelPattern.Size = new System.Drawing.Size(22, 25);
             this.btnDelPattern.TabIndex = 8;
             this.btnDelPattern.Text = "X";
-            this.btnDelPattern.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelPattern.Click += new System.EventHandler(this.btnDelPattern_Click);
             // 
             // btnAddPattern
             // 
             this.btnAddPattern.Border = 0;
-            this.btnAddPattern.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPattern.ForeColor = System.Drawing.Color.White;
-            this.btnAddPattern.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddPattern.Location = new System.Drawing.Point(251, 3);
             this.btnAddPattern.Name = "btnAddPattern";
             this.btnAddPattern.Size = new System.Drawing.Size(22, 25);
             this.btnAddPattern.TabIndex = 9;
             this.btnAddPattern.Text = "+";
-            this.btnAddPattern.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddPattern.Click += new System.EventHandler(this.btnAddPattern_Click);
             // 
             // panelPatterns
@@ -202,10 +153,11 @@
             // lblWorking
             // 
             this.lblWorking.AutoSize = true;
-            this.lblWorking.ForeColor = System.Drawing.Color.White;
             this.lblWorking.Location = new System.Drawing.Point(3, 132);
+            this.lblWorking.MaximumSize = new System.Drawing.Size(97, 35);
+            this.lblWorking.MinimumSize = new System.Drawing.Size(97, 35);
             this.lblWorking.Name = "lblWorking";
-            this.lblWorking.Size = new System.Drawing.Size(100, 32);
+            this.lblWorking.Size = new System.Drawing.Size(97, 35);
             this.lblWorking.TabIndex = 14;
             this.lblWorking.Text = "Working...";
             this.lblWorking.Visible = false;
@@ -213,29 +165,21 @@
             // btnStopAutogen
             // 
             this.btnStopAutogen.Border = 0;
-            this.btnStopAutogen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStopAutogen.ForeColor = System.Drawing.Color.White;
-            this.btnStopAutogen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStopAutogen.Location = new System.Drawing.Point(3, 82);
             this.btnStopAutogen.Name = "btnStopAutogen";
             this.btnStopAutogen.Size = new System.Drawing.Size(268, 40);
             this.btnStopAutogen.TabIndex = 13;
             this.btnStopAutogen.Text = "Stop";
-            this.btnStopAutogen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnStopAutogen.Click += new System.EventHandler(this.btnStopAutogen_Click);
             // 
             // btnStartAutogen
             // 
             this.btnStartAutogen.Border = 0;
-            this.btnStartAutogen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStartAutogen.ForeColor = System.Drawing.Color.White;
-            this.btnStartAutogen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStartAutogen.Location = new System.Drawing.Point(3, 39);
             this.btnStartAutogen.Name = "btnStartAutogen";
             this.btnStartAutogen.Size = new System.Drawing.Size(268, 40);
             this.btnStartAutogen.TabIndex = 12;
             this.btnStartAutogen.Text = "Start";
-            this.btnStartAutogen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnStartAutogen.Click += new System.EventHandler(this.btnStartAutogen_Click);
             // 
             // boxAutogenCount
@@ -251,16 +195,12 @@
             // btnAutogen
             // 
             this.btnAutogen.Border = 0;
-            this.btnAutogen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAutogen.Font = new System.Drawing.Font("Yanone Kaffeesatz", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAutogen.ForeColor = System.Drawing.Color.White;
-            this.btnAutogen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAutogen.Location = new System.Drawing.Point(11, 176);
             this.btnAutogen.Name = "btnAutogen";
-            this.btnAutogen.Size = new System.Drawing.Size(154, 43);
+            this.btnAutogen.Size = new System.Drawing.Size(231, 43);
             this.btnAutogen.TabIndex = 11;
             this.btnAutogen.Text = "AutoGen";
-            this.btnAutogen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAutogen.Click += new System.EventHandler(this.btnAutogen_Click);
             // 
             // bwAutogen
@@ -274,12 +214,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 231);
+            this.Controls.Add(this.panelAutogen);
             this.Controls.Add(this.panelPatterns);
             this.Controls.Add(this.btnAutogen);
-            this.Controls.Add(this.panelAutogen);
             this.Controls.Add(this.btnTemplates);
-            this.Controls.Add(this.lblHelp);
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.boxTemplate);
@@ -303,8 +241,6 @@
         private System.Windows.Forms.TextBox boxTemplate;
         private PearXLib.Engine.Flat.FlatButton btnGenerate;
         private PearXLib.Engine.Flat.FlatButton btnCopy;
-        private PearXLib.Engine.Flat.FlatButton btnHelp;
-        private PearXLib.Engine.Flat.FlatLabel lblHelp;
         private PearXLib.Engine.Flat.FlatButton btnTemplates;
         private PearXLib.Engine.Flat.FlatButton btnDelPattern;
         private PearXLib.Engine.Flat.FlatButton btnAddPattern;

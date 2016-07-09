@@ -7,6 +7,7 @@ namespace xRandomer
         public AddPatternForm()
         {
             InitializeComponent();
+            Boxes.ToTrayBox.Enabled = false;
         }
 
         private void btnOK_Click(object sender, System.EventArgs e)

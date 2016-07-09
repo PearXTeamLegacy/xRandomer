@@ -9,8 +9,8 @@ namespace xRandomer
         public rForm()
         {
             Font = new Font("Yanone Kaffeesatz", 20.25F);
-            MaximizeBox = false;
             Icon = Resources.xricon;
+            Boxes.MaximizeBox.Enabled = false;
         }
     }
 }
